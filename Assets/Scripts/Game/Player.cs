@@ -5,4 +5,5 @@ using UnityEngine.Assertions;
 
 public class Player : MonoBehaviour
 {
+	public Game game;
 }
