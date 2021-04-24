@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 0ae2a5b278c9e174cac2a096c8732776
+guid: 8c6de5fb603289142be9815c960e03c0
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4346244404228752641
-    second: Arrow_0
-  - first:
-      213: -6662812116773042688
-    second: Arrow_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,49 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Arrow_0
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 6
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffa7ae2edb90fa3c0800000000000000
-      internalID: -4346244404228752641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Arrow_1
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 0
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 006039e4eafe883a0800000000000000
-      internalID: -6662812116773042688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

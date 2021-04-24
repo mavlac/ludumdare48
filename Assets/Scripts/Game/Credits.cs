@@ -51,12 +51,13 @@ public class Credits : MonoBehaviour
 	{
 		title.overrideColorTags = true;
 		
-		yield return new WaitForSeconds(0.15f);
+		yield return new WaitForSeconds(1f);
 
 		title.overrideColorTags = false;
-		yield return new WaitForSeconds(1.75f);
+		yield return new WaitForSeconds(0.1f);
 		title.overrideColorTags = true;
 	}
+
 
 
 	public void Dismiss()

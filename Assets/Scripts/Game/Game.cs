@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
 	public bool skipIntroInEditor = false;
 
 	[Space]
+	public Transition transition;
 	public Credits credits;
 	public Help help;
 
@@ -24,6 +25,8 @@ public class Game : MonoBehaviour
 
 	private void Start()
 	{
+		transition.FadeIn();
+		
 		if (Application.isEditor && skipIntroInEditor)
 		{
 			IntroCompleted();
