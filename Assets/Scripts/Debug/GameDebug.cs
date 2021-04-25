@@ -12,13 +12,19 @@ public class GameDebug : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.F) && Input.GetKey(KeyCode.LeftShift))
 		{
-			// Insert whatever actions desired...
+			var game = FindObjectOfType<Game>();
+			if (game) game.Victory();
+		}
+		if (Input.GetKeyDown(KeyCode.K) && Input.GetKey(KeyCode.LeftShift))
+		{
+			var game = FindObjectOfType<Game>();
+			if (game) game.GameOver();
 		}
 	}
 #endif
-	
-	
-	
+
+
+
 	public void RestartCurrentScene()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

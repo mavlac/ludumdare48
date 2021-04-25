@@ -8,9 +8,6 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 {
 	public Player player;
 
-	[Header("Events")]
-	public EventSO jumpFromBoat;
-
 
 	private InputControls inputControls;
 
@@ -44,12 +41,15 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 	{
 		if (player.game.Phase != Game.GamePhase.Idle) return;
 		
+		
+		player.InputControlInitiated();
+		
 		if (firstMovement)
 		{
-			jumpFromBoat.Raise();
+			player.JumpedFromBoat();
 			firstMovement = false;
 		}
-
+		
 		
 		Vector2 controlVector;
 		controlVector = context.ReadValue<Vector2>();

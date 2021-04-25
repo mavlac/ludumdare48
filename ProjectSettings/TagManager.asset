@@ -54,9 +54,9 @@ TagManager:
   - name: OnTop
     uniqueID: 358936483
     locked: 0
-  - name: GUI
-    uniqueID: 949182145
-    locked: 0
-  - name: ScreenFader
+  - name: Transition
     uniqueID: 207339481
+    locked: 0
+  - name: UI
+    uniqueID: 949182145
     locked: 0

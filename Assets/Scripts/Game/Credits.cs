@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using TMPro;
+using MavLib.CommonSound;
 
 public class Credits : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class Credits : MonoBehaviour
 
 	[Header("Events")]
 	public EventSO jumpFromBoat;
+
+	[Header("Audio")]
+	public AudioClip LDBlinkClip;
 
 
 	public bool IsDismissed { get; private set; } = false;
@@ -54,6 +58,7 @@ public class Credits : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 
 		title.overrideColorTags = false;
+		CommonSound.PlayFX(LDBlinkClip);
 		yield return new WaitForSeconds(0.1f);
 		title.overrideColorTags = true;
 	}

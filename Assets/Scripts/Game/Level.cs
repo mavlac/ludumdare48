@@ -5,6 +5,7 @@ using UnityEngine.Assertions;
 
 public class Level : MonoBehaviour
 {
+	public Game game;
 	[Tag] public string playerTag = "Player";
 
 	[Header("Level Config")]
@@ -15,8 +16,14 @@ public class Level : MonoBehaviour
 
 
 
+	private void OnValidate()
+	{
+		if (!game) game = FindObjectOfType<Game>();
+	}
 	private void Awake()
 	{
+		Assert.IsNotNull(game);
+
 		if (entranceCollider)
 		{
 			entranceCollider.enabled = false;
@@ -27,6 +34,8 @@ public class Level : MonoBehaviour
 		if (collision.CompareTag(playerTag))
 		{
 			Debug.Log($"{playerTag} has entered {this.gameObject.name}");
+			
+			game.LevelEntered(this, anchorCameraOnEnter);
 		}
 	}
 	private void OnTriggerExit2D(Collider2D collision)

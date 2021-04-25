@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using MavLib.CommonSound;
 
 public class Help : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Help : MonoBehaviour
 
 	[Header("Events")]
 	public EventSO jumpFromBoat;
+
+	[Header("Audio")]
+	public AudioClip helpPopInClip;
 
 
 
@@ -42,6 +46,7 @@ public class Help : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 
+		CommonSound.PlayFX(helpPopInClip);
 		controls.SetActive(true);
 		controls.GetComponent<SpriteSwitch>().SetFrame(1);
 	}
