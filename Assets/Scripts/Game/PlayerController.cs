@@ -109,6 +109,8 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 			// Shoot the harpoon
 			// Wait until it hits the obstacle
 			yield return StartCoroutine(player.launcher.ShotCoroutine(destination));
+
+			yield return null;
 		}
 		else
 		{

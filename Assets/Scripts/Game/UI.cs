@@ -13,6 +13,9 @@ public class UI : MonoBehaviour
 	public GameObject canvas;
 
 	[Space]
+	public GameObject thanks;
+
+	[Space]
 	public Image frame;
 
 	[Space]
@@ -39,6 +42,7 @@ public class UI : MonoBehaviour
 	{
 		canvas.gameObject.SetActive(false);
 
+		thanks.SetActive(false);
 		frame.enabled = false;
 		picture.enabled = false;
 
@@ -88,6 +92,9 @@ public class UI : MonoBehaviour
 			case Message.Victory:
 				CommonSound.PlayFX(victoryClip);
 				picture.sprite = pictureVictory;
+				
+				thanks.SetActive(true);
+				
 				break;
 		}
 

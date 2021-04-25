@@ -72,7 +72,7 @@ public class Level : MonoBehaviour
 
 		//Debug.Log(direction);
 		Vector2? previousPoint = null;
-		for (int i = 1; i < 10; i++)
+		for (int i = 1; i < 20; i++)
 		{
 			Vector2 point = from + (Vector2)(direction.Value) * Game.GridSize * i;
 			var blocked = CheckPointForObstacle(point, obstacleCheckRadius, obstacleLayers);
