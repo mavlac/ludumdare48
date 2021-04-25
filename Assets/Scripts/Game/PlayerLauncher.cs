@@ -58,6 +58,8 @@ public class PlayerLauncher : MonoBehaviour
 		armedVisual.enabled = false;
 
 		harpoon.transform.position = this.transform.position;
+		yield return null;
+
 		harpoon.gameObject.SetActive(true);
 		yield return StartCoroutine(harpoon.ShotCoroutine(destination));
 		

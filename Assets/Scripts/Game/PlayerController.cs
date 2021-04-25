@@ -118,7 +118,11 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 		
 		// Move the Player
 		yield return StartCoroutine(PlayerMovementCoroutine(rb.position, destination));
-		
+
+		player.launcher.harpoon.gameObject.SetActive(false);
+
+		yield return null;
+
 		player.MovementFinished();
 	}
 	IEnumerator PlayerMovementCoroutine(Vector2 start, Vector2 destination)

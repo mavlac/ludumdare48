@@ -20,13 +20,32 @@ public class Harpoon : MonoBehaviour
 	{
 		RotateTowards(destination);
 		
-		yield return StartCoroutine(MovementCoroutine(rb.position, destination));
+		yield return StartCoroutine(MovementCoroutine(this.transform.position, destination));
 		
 		CommonSound.PlayFX(harpoonHitObstacle);
 	}
 	void RotateTowards(Vector2 destination)
 	{
-		// TODO
+		if (this.transform.position.x < destination.x - 0.1f)
+		{
+			// Right
+			this.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+		}
+		else if (this.transform.position.x > destination.x + 0.1f)
+		{
+			// Left
+			this.transform.localRotation = Quaternion.Euler(0f, 0f, 180f);
+		}
+		else if (this.transform.position.y < destination.y - 0.1f)
+		{
+			// Up
+			this.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+		}
+		else if (this.transform.position.y > destination.y + 0.1f)
+		{
+			// Down
+			this.transform.localRotation = Quaternion.Euler(0f, 0f, -90f);
+		}
 	}
 	IEnumerator MovementCoroutine(Vector2 start, Vector2 destination)
 	{

@@ -6782,9 +6782,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -57591819
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 2382908340504850858, guid: b4f8023fdfa77bf42bf1bec5e41b60ed,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6847,25 +6847,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 895039784}
-  movementSpeed: 1
+  movementSpeed: 0.5
   movementProgression:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -9517,7 +9517,8 @@ SpriteRenderer:
   m_SortingLayerID: 902882721
   m_SortingLayer: -1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 265050883009070605, guid: b4f8023fdfa77bf42bf1bec5e41b60ed, type: 3}
+  m_Sprite: {fileID: -3335310245098041316, guid: b76032cb1945ca946b3e22e30da91360,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9541,7 +9542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2132636211}
-  playerEnd: {fileID: 427306482}
+  player: {fileID: 427306482}
 --- !u!1 &2135748676
 GameObject:
   m_ObjectHideFlags: 0

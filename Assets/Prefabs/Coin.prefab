@@ -112,5 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  col: {fileID: 346881665188930276}
   coinCollected: {fileID: 11400000, guid: 1cdcc51aa9daa36429a2ccf0328b31d9, type: 2}
   coinCollectedClip: {fileID: 8300000, guid: 68d4f0040342b814490013bee0e49323, type: 3}
