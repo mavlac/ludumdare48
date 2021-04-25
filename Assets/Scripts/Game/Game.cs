@@ -113,7 +113,7 @@ public class Game : MonoBehaviour
 		switch(dismissedMessage)
 		{
 			case UI.Message.GameOver:
-				// TODO Restart Scene without Intro
+				// TODO Restart Scene without Intro?
 				break;
 			
 			case UI.Message.Victory:

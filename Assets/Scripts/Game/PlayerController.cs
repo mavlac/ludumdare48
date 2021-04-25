@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 
 		if (destinationPosition.HasValue)
 		{
-			player.InputControlAcceptedAsMovement();
-
+			player.MovementInitiated();
+			
 			if (firstMovement)
 			{
 				player.JumpedFromBoat();
@@ -99,14 +99,29 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 
 	public void MoveTo(Vector2 destination)
 	{
-		StartCoroutine(MovementCoroutine(rb.position, destination, MovementFinished));
-		
-		void MovementFinished()
-		{
-			player.MovementFinished();
-		}
+		StartCoroutine(MoveToCoroutine(destination));
 	}
-	IEnumerator MovementCoroutine(Vector2 start, Vector2 destination, System.Action movementFinished)
+	IEnumerator MoveToCoroutine(Vector2 destination)
+	{
+		// Move or Shoot and move
+		if (player.launcher.Armed)
+		{
+			// Shoot the harpoon
+			// Wait until it hits the obstacle
+			yield return StartCoroutine(player.launcher.ShotCoroutine(destination));
+		}
+		else
+		{
+			// Arm the launcher
+			player.launcher.Arm();
+		}
+		
+		// Move the Player
+		yield return StartCoroutine(PlayerMovementCoroutine(rb.position, destination));
+		
+		player.MovementFinished();
+	}
+	IEnumerator PlayerMovementCoroutine(Vector2 start, Vector2 destination)
 	{
 		var duration = Vector2.Distance(start, destination) * movementSpeed;
 		
@@ -129,7 +144,5 @@ public class PlayerController : MonoBehaviour, InputControls.IGameplayActions
 		moveParticles.Stop();
 
 		rb.MovePosition(destination);
-		
-		movementFinished.Invoke();
 	}
 }

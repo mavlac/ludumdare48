@@ -13,11 +13,14 @@ public class Player : MonoBehaviour
 	public Sprite vesselVisual;
 	public Sprite underwaterVisual;
 
-	//[Header("Components")]
+	[Header("Components")]
+	public PlayerLauncher launcher;
 
 	
 	[Header("Events")]
 	public EventSO jumpFromBoat;
+	public EventSO movementInitiated;
+	public EventSO movementFinished;
 
 	[Header("Sounds")]
 	public AudioClip movementClip;
@@ -33,13 +36,17 @@ public class Player : MonoBehaviour
 	{
 		CommonSound.PlayFX(movementClip);
 	}
-	public void InputControlAcceptedAsMovement()
+	public void MovementInitiated()
 	{
+		movementInitiated.Raise();
+		
 		game.UpdatePhase(Game.GamePhase.Movement);
 	}
 	public void MovementFinished()
 	{
 		CommonSound.PlayFX(movementFinishedClip);
+		
+		movementFinished.Raise();
 		
 		game.UpdatePhase(Game.GamePhase.Idle);
 	}

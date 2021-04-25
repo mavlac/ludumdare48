@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: b4f8023fdfa77bf42bf1bec5e41b60ed
+guid: b76032cb1945ca946b3e22e30da91360
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2382908340504850858
-    second: Harpoon_0
+      213: 8675560025693077759
+    second: HarpoonPending_0
   - first:
-      213: 265050883009070605
-    second: Harpoon_1
+      213: -3335310245098041316
+    second: HarpoonPending_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Harpoon_0
+      name: HarpoonPending_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa17b10b28ac11120800000000000000
-      internalID: 2382908340504850858
+      spriteID: ff0c307d0e7c56870800000000000000
+      internalID: 8675560025693077759
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon_1
+      name: HarpoonPending_1
       rect:
         serializedVersion: 2
         x: 0
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d06c821bf56ada300800000000000000
-      internalID: 265050883009070605
+      spriteID: c10d539d00996b1d0800000000000000
+      internalID: -3335310245098041316
       vertices: []
       indices: 
       edges: []

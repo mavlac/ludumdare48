@@ -8,9 +8,15 @@ public class Dashboard : MonoBehaviour
 	public GameObject firstCoin;
 	public float nextCoinOffset;
 
+	[Space]
+	public SpriteRenderer launcherArmedVisual;
+	public Sprite launcherArmedSprite;
+	public Sprite launcherPendingSprite;
+
 	[Header("Events")]
 	public EventSO coinCollected;
-
+	public EventSO launcherArmed;
+	public EventSO launcherReleasedHarpoon;
 
 	public int CollectedCoins { get; private set; } = 0;
 
@@ -19,14 +25,19 @@ public class Dashboard : MonoBehaviour
 	private void Awake()
 	{
 		firstCoin.gameObject.SetActive(false);
+		launcherArmedVisual.enabled = false;
 	}
 	private void OnEnable()
 	{
 		coinCollected.RegisterAction(OnCoinCollected);
+		launcherArmed.RegisterAction(OnLauncherArmed);
+		launcherReleasedHarpoon.RegisterAction(OnLauncherReleasedHarpoon);
 	}
 	private void OnDisable()
 	{
 		coinCollected.UnregisterAction(OnCoinCollected);
+		launcherArmed.UnregisterAction(OnLauncherArmed);
+		launcherReleasedHarpoon.UnregisterAction(OnLauncherReleasedHarpoon);
 	}
 
 
@@ -49,5 +60,15 @@ public class Dashboard : MonoBehaviour
 				Quaternion.identity,
 				this.transform);
 		}
+	}
+
+	private void OnLauncherArmed()
+	{
+		launcherArmedVisual.enabled = true;
+		launcherArmedVisual.sprite = launcherArmedSprite;
+	}
+	private void OnLauncherReleasedHarpoon()
+	{
+		launcherArmedVisual.sprite = launcherPendingSprite;
 	}
 }
