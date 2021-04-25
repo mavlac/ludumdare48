@@ -21,6 +21,10 @@ public class Game : MonoBehaviour
 	public Help help;
 	public UI ui;
 
+	[Space]
+	public Water water;
+	public Player player;
+
 	[Header("Events")]
 	public EventSO preSceneRestart;
 	
@@ -52,9 +56,16 @@ public class Game : MonoBehaviour
 
 		SwitchPhase(GamePhase.Idle);
 	}
-	public void LevelEntered(Level level, bool anchorCameraToLevel)
+	public void LevelEntered(Level level)
 	{
-		if (anchorCameraToLevel)
+		player.EnteredLevel(level);
+		
+		if (level.splashWaterOnEnter)
+		{
+			water.Splash();
+		}
+
+		if (level.anchorCameraOnEnter)
 		{
 			cameraRig.FocusOnLevel(level);
 		}

@@ -7,14 +7,20 @@ using UnityEngine.Assertions;
 public class Player : MonoBehaviour
 {
 	public Game game;
-	
+
+	[Space]
+	public SpriteRenderer visual;
+	public Sprite vesselVisual;
+	public Sprite underwaterVisual;
+
+	//[Header("Components")]
+
 	
 	[Header("Events")]
 	public EventSO jumpFromBoat;
 
 	[Header("Sounds")]
 	public AudioClip movementClip;
-	public AudioClip jumpFromBoatClip;
 	
 	
 	
@@ -24,8 +30,10 @@ public class Player : MonoBehaviour
 	}
 	public void JumpedFromBoat()
 	{
-		CommonSound.PlayFX(jumpFromBoatClip);
-		
 		jumpFromBoat.Raise();
+	}
+	public void EnteredLevel(Level level)
+	{
+		visual.sprite = (level.underwaterPlayerVisual) ? underwaterVisual : vesselVisual;
 	}
 }

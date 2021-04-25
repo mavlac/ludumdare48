@@ -24,6 +24,10 @@ public class UI : MonoBehaviour
 	public Button dismissButton;
 	public AudioClip buttonClickClip;
 
+	[Header("Audio")]
+	public AudioClip gameOverClip;
+	public AudioClip victoryClip;
+
 
 
 	private Message currentMessage = Message.None;
@@ -65,8 +69,15 @@ public class UI : MonoBehaviour
 		
 		switch (message)
 		{
-			case Message.GameOver: picture.sprite = pictureGameOver; break;
-			case Message.Victory: picture.sprite = pictureVictory; break;
+			case Message.GameOver:
+				picture.sprite = pictureGameOver;
+				CommonSound.PlayFX(gameOverClip);
+				break;
+
+			case Message.Victory:
+				CommonSound.PlayFX(victoryClip);
+				picture.sprite = pictureVictory;
+				break;
 		}
 		
 		StartCoroutine(ShowMessageCoroutine());
@@ -92,6 +103,7 @@ public class UI : MonoBehaviour
 
 	public void DismissMessage()
 	{
+		CommonSound.StopBothChannels();
 		CommonSound.PlayFX(buttonClickClip);
 
 		Debug.Log("UI message dismissed");

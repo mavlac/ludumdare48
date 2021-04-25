@@ -10,6 +10,8 @@ public class Level : MonoBehaviour
 
 	[Header("Level Config")]
 	public bool anchorCameraOnEnter = true;
+	public bool splashWaterOnEnter = false;
+	public bool underwaterPlayerVisual = true;
 
 	[Space]
 	public Collider2D entranceCollider;
@@ -35,7 +37,7 @@ public class Level : MonoBehaviour
 		{
 			Debug.Log($"{playerTag} has entered {this.gameObject.name}");
 			
-			game.LevelEntered(this, anchorCameraOnEnter);
+			game.LevelEntered(this);
 		}
 	}
 	private void OnTriggerExit2D(Collider2D collision)
