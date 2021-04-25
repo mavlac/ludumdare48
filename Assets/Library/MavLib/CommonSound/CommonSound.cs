@@ -62,7 +62,7 @@ namespace MavLib.CommonSound
 		}
 		public static void PlayFX(AudioClip clip, float volume, bool exclusive)
 		{
-			Assert.IsNotNull(Instance, $"{nameof(CommonSound)} instance not present.");
+			if (Instance == null) return;
 			if (clip == null) return;
 
 			if (exclusive)

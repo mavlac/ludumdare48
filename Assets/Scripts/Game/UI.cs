@@ -67,6 +67,17 @@ public class UI : MonoBehaviour
 		
 		canvas.gameObject.SetActive(true);
 		
+		StartCoroutine(ShowMessageCoroutine(message));
+	}
+	IEnumerator ShowMessageCoroutine(Message message)
+	{
+		yield return new WaitForSeconds(1f);
+		
+		frame.enabled = true;
+		
+		yield return new WaitForSeconds(0.15f);
+		
+		picture.enabled = true;
 		switch (message)
 		{
 			case Message.GameOver:
@@ -79,19 +90,7 @@ public class UI : MonoBehaviour
 				picture.sprite = pictureVictory;
 				break;
 		}
-		
-		StartCoroutine(ShowMessageCoroutine());
-	}
-	IEnumerator ShowMessageCoroutine()
-	{
-		yield return new WaitForSeconds(0.15f);
-		
-		frame.enabled = true;
-		
-		yield return new WaitForSeconds(0.15f);
-		
-		picture.enabled = true;
-		
+
 		yield return new WaitForSeconds(0.15f);
 
 		dismissButton.gameObject.SetActive(true);

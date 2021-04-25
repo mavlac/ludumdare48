@@ -75,10 +75,13 @@ SpriteAtlas:
   - {fileID: 21300000, guid: db43c49b8c39d1145af010262901c5b1, type: 3}
   - {fileID: -5352640175447645027, guid: 584033acef9e35146bda078e8c0bf463, type: 3}
   - {fileID: 1627073126378159443, guid: 584033acef9e35146bda078e8c0bf463, type: 3}
-  - {fileID: 21300000, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
+  - {fileID: -4843423368283092884, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
+  - {fileID: -3771765876042405461, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
+  - {fileID: 3041970383809997380, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
   - {fileID: 21300000, guid: 0aced27e20b51b449b99fd5cf0727dca, type: 3}
   - {fileID: 21300000, guid: 298557debe4013a4eafdbbc8617d9f86, type: 3}
-  - {fileID: 21300000, guid: b4f8023fdfa77bf42bf1bec5e41b60ed, type: 3}
+  - {fileID: 265050883009070605, guid: b4f8023fdfa77bf42bf1bec5e41b60ed, type: 3}
+  - {fileID: 2382908340504850858, guid: b4f8023fdfa77bf42bf1bec5e41b60ed, type: 3}
   m_PackedSpriteNamesToIndex:
   - Block_1
   - Block_0
@@ -96,9 +99,12 @@ SpriteAtlas:
   - Cloud
   - Seaweed_0
   - Seaweed_1
-  - Octopus
+  - Octopus_2
+  - Octopus_1
+  - Octopus_0
   - Coin
   - Diver
-  - Harpoon
+  - Harpoon_1
+  - Harpoon_0
   m_Tag: _Game
   m_IsVariant: 0

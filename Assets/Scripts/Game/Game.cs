@@ -8,7 +8,8 @@ public class Game : MonoBehaviour
 {
 	public const float GridSize = 0.16f;
 
-	public enum GamePhase { Intro, Idle, Movement }
+
+	public enum GamePhase { Intro, Idle, Movement, UIEnding }
 
 
 	public GameIntro intro;
@@ -27,6 +28,8 @@ public class Game : MonoBehaviour
 
 	[Header("Events")]
 	public EventSO preSceneRestart;
+	public EventSO killedByOctopus;
+	public EventSO treasureReached;
 	
 	
 	public GamePhase Phase { get; private set; } = GamePhase.Intro;
@@ -46,6 +49,31 @@ public class Game : MonoBehaviour
 			intro.Play(IntroCompleted);
 		}
 	}
+	private void OnEnable()
+	{
+		killedByOctopus.RegisterAction(OnKilledByOctopus);
+		treasureReached.RegisterAction(OnTreasureReached);
+	}
+	private void OnDisable()
+	{
+		killedByOctopus.UnregisterAction(OnKilledByOctopus);
+		treasureReached.UnregisterAction(OnTreasureReached);
+	}
+
+
+
+	private void OnKilledByOctopus()
+	{
+		UpdatePhase(GamePhase.UIEnding);
+		
+		GameOver();
+	}
+	private void OnTreasureReached()
+	{
+		UpdatePhase(GamePhase.UIEnding);
+		
+		Victory();
+	}
 
 
 
@@ -54,7 +82,7 @@ public class Game : MonoBehaviour
 	{
 		help.DelayedShow();
 
-		SwitchPhase(GamePhase.Idle);
+		UpdatePhase(GamePhase.Idle);
 	}
 	public void LevelEntered(Level level)
 	{
@@ -104,7 +132,7 @@ public class Game : MonoBehaviour
 
 
 
-	void SwitchPhase(GamePhase newPhase)
+	public void UpdatePhase(GamePhase newPhase)
 	{
 		if (newPhase == Phase) return;
 		
