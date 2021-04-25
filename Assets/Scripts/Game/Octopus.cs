@@ -7,12 +7,18 @@ using MavLib.CommonSound;
 public class Octopus : MonoBehaviour
 {
 	[Tag] public string playerTag = "Player";
+	[Tag] public string harpoonTag = "Harpoon";
+
+	[Space]
+	public Collider2D col;
+	public SpriteSwitch deathAnimation;
 
 	[Header("Events")]
 	public EventSO killedByOctopus;
 
 	[Header("Sounds")]
 	public AudioClip playerKilledClip;
+	public AudioClip enemyEliminated;
 
 
 
@@ -22,7 +28,12 @@ public class Octopus : MonoBehaviour
 		{
 			KillPlayer();
 		}
+		else if (collision.CompareTag(harpoonTag))
+		{
+			Die();
+		}
 	}
+
 
 
 	void KillPlayer()
@@ -30,5 +41,16 @@ public class Octopus : MonoBehaviour
 		killedByOctopus.Raise();
 		
 		CommonSound.PlayFX(playerKilledClip);
+	}
+	void Die()
+	{
+		//event of killed octopus if any
+		
+		CommonSound.PlayFX(enemyEliminated);
+		
+		col.enabled = false;
+		
+		deathAnimation.TriggerAnimation();
+		// Destroys self when animation completed
 	}
 }

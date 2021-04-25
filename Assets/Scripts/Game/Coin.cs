@@ -8,6 +8,9 @@ public class Coin : MonoBehaviour
 {
 	[Tag] public string playerTag = "Player";
 
+	[Space]
+	public Collider2D col;
+
 	[Header("Events")]
 	public EventSO coinCollected;
 
@@ -30,7 +33,9 @@ public class Coin : MonoBehaviour
 		coinCollected.Raise();
 
 		CommonSound.PlayFX(coinCollectedClip);
-		
+
+		col.enabled = false;
+
 		Destroy(this.gameObject, 0.1f);
 	}
 }

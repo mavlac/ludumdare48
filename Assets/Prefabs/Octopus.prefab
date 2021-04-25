@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4181357263686720557}
   - component: {fileID: 8813315271520194845}
   - component: {fileID: 4181357263686720555}
+  - component: {fileID: 2307843234704891669}
   m_Layer: 0
   m_Name: Octopus
   m_TagString: Untagged
@@ -113,5 +114,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  harpoonTag: Harpoon
+  col: {fileID: 8813315271520194845}
+  deathAnimation: {fileID: 2307843234704891669}
   killedByOctopus: {fileID: 11400000, guid: b8684c37cd8c03540947c55cbe4846c1, type: 2}
   playerKilledClip: {fileID: 8300000, guid: 3fa9c2f6e32c67340a4e85f310963826, type: 3}
+  enemyEliminated: {fileID: 8300000, guid: 8305628bff80bbe4683364de690a56ad, type: 3}
+--- !u!114 &2307843234704891669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181357263686720558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82716bf59b66fba4591fd42b0f2f4fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playOnAwake: 0
+  frameTime: 0.15
+  loop: 0
+  destroyAtLoopEnd: 1
+  spriteSet:
+  - {fileID: 3041970383809997380, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
+  - {fileID: -3771765876042405461, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
+  - {fileID: -4843423368283092884, guid: 86e28b8db1d8c7b4e930f27ddc78547d, type: 3}
+  frameTimeOverrides:
+    frameTimes: []
+  onLoopEnd:
+    m_PersistentCalls:
+      m_Calls: []
